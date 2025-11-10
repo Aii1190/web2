@@ -1,0 +1,252 @@
+<!doctype html>
+<!--
+  Tri-Valley FFA Alumni - Single-file website
+  - Uses Tailwind CDN for easy editing in VS Code (no build step required)
+  - Replace placeholder text/images and donation link as needed
+  How to preview locally:
+  1) Save this file as tri-valley-ffa-alumni.html
+  2) Open it in your browser (double-click or right-click -> Open With)
+  3) To put on GitHub: create a repo and upload this file to serve via GitHub Pages (main branch -> Settings -> Pages -> choose / (root))
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tri‑Valley FFA Alumni</title>
+  <meta name="description" content="Tri‑Valley FFA Alumni — supporting students, events, and community." />
+
+  <!-- Tailwind CDN (no build required) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config: school blue + white
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            tvblue: '#0b5ed7',
+            tvdark: '#063a7a'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* small visual helpers */
+    .container { max-width: 1100px; margin-left: auto; margin-right: auto; }
+  </style>
+</head>
+<body class="bg-white text-slate-800 leading-relaxed">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur shadow-sm">
+    <div class="container flex items-center justify-between p-4">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full bg-tvblue flex items-center justify-center text-white font-bold">TV</div>
+        <div>
+          <h1 class="text-lg font-semibold">Tri‑Valley FFA Alumni</h1>
+          <p class="text-xs text-slate-500">Supporting students & community</p>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex gap-6 items-center">
+        <a href="#home" class="hover:text-tvblue">Home</a>
+        <a href="#about" class="hover:text-tvblue">About</a>
+        <a href="#events" class="hover:text-tvblue">Events</a>
+        <a href="#donate" class="hover:text-tvblue">Donate</a>
+        <a href="#contact" class="hover:text-tvblue">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#donate" class="hidden sm:inline-block px-4 py-2 rounded-md bg-tvblue text-white font-medium">Donate</a>
+        <button id="mobileMenuBtn" class="md:hidden p-2 rounded-md border">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- mobile menu -->
+    <div id="mobileMenu" class="hidden md:hidden border-t">
+      <div class="p-4 flex flex-col gap-3">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#events">Events</a>
+        <a href="#donate">Donate</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO / HOME -->
+  <main>
+    <section id="home" class="bg-gradient-to-b from-white to-slate-50 py-20">
+      <div class="container px-4 text-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-tvblue">Tri‑Valley FFA Alumni</h2>
+        <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">We support Tri‑Valley FFA students through events, scholarships, and community partnerships. Join us in supporting the next generation of agricultural leaders.</p>
+
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="#events" class="px-6 py-3 rounded-md border border-tvblue text-tvblue font-medium">Upcoming Events</a>
+          <a href="#donate" class="px-6 py-3 rounded-md bg-tvblue text-white font-medium">Donate</a>
+          <a href="#contact" class="px-6 py-3 rounded-md bg-white shadow">Contact Us</a>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-lg overflow-hidden shadow">
+            <img src="https://images.unsplash.com/photo-1524594154906-d1d9b3ea7b31?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="FFA event" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold">Career Development Events</h3>
+              <p class="text-sm text-slate-600 mt-2">Preparing students for leadership and careers in agriculture.</p>
+            </div>
+          </div>
+
+          <div class="rounded-lg overflow-hidden shadow">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="students" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold">Scholarships</h3>
+              <p class="text-sm text-slate-600 mt-2">Financial support for outstanding FFA members.</p>
+            </div>
+          </div>
+
+          <div class="rounded-lg overflow-hidden shadow">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="community" class="w-full h-48 object-cover">
+            <div class="p-4">
+              <h3 class="font-semibold">Community Projects</h3>
+              <p class="text-sm text-slate-600 mt-2">Volunteering and community outreach throughout the year.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-16">
+      <div class="container px-4 grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-3xl font-bold text-tvblue">About Tri‑Valley FFA Alumni</h2>
+          <p class="mt-4 text-slate-600">Tri‑Valley FFA Alumni supports the Tri‑Valley FFA chapter by funding scholarships, sponsoring events, and offering mentorship to students. We're a group of community members, parents, and alumni committed to the success of our youth.</p>
+
+          <ul class="mt-6 space-y-3 text-slate-700">
+            <li>• Fundraise for scholarships and travel</li>
+            <li>• Host career development and community events</li>
+            <li>• Volunteer mentorship and program support</li>
+          </ul>
+
+          <div class="mt-6 flex gap-3">
+            <a href="#events" class="px-4 py-2 rounded-md border border-tvblue text-tvblue">See Events</a>
+            <a href="#contact" class="px-4 py-2 rounded-md bg-tvblue text-white">Get Involved</a>
+          </div>
+        </div>
+
+        <div class="rounded-lg overflow-hidden shadow">
+          <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="about" class="w-full h-72 object-cover">
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events" class="py-16 bg-slate-50">
+      <div class="container px-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-2xl font-bold text-tvblue">Events & Past Photos</h2>
+          <a href="#contact" class="text-sm underline">Have an event to share?</a>
+        </div>
+
+        <p class="mt-3 text-slate-600">Below are recent and past events. Click any image to view full size.</p>
+
+        <!-- gallery -->
+        <div class="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <!-- Replace the src values with your event photos -->
+          <button class="group overflow-hidden rounded-lg shadow" onclick="openLightbox('https://images.unsplash.com/photo-1524594154906-d1d9b3ea7b31?q=80&w=1200&auto=format&fit=crop')">
+            <img src="https://images.unsplash.com/photo-1524594154906-d1d9b3ea7b31?q=80&w=800&auto=format&fit=crop" alt="event photo" class="w-full h-40 object-cover transform group-hover:scale-105 transition" />
+          </button>
+          <button class="group overflow-hidden rounded-lg shadow" onclick="openLightbox('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop')">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop" alt="event photo" class="w-full h-40 object-cover transform group-hover:scale-105 transition" />
+          </button>
+          <button class="group overflow-hidden rounded-lg shadow" onclick="openLightbox('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop')">
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop" alt="event photo" class="w-full h-40 object-cover transform group-hover:scale-105 transition" />
+          </button>
+          <button class="group overflow-hidden rounded-lg shadow" onclick="openLightbox('https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=1200&auto=format&fit=crop')">
+            <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=800&auto=format&fit=crop" alt="event photo" class="w-full h-40 object-cover transform group-hover:scale-105 transition" />
+          </button>
+        </div>
+
+        <!-- Officers list -->
+        <div class="mt-10">
+          <h3 class="text-lg font-semibold">Officers & Board</h3>
+          <p class="text-sm text-slate-600 mt-2">Meet the people helping run Tri‑Valley FFA Alumni.</p>
+
+          <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Repeat for each officer -->
+            <div class="rounded-lg border p-4 text-center">
+              <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 flex items-center justify-center font-semibold">JS</div>
+              <h4 class="mt-3 font-medium">Jane Smith</h4>
+              <p class="text-sm text-slate-600">President</p>
+              <p class="mt-2 text-xs text-slate-500">Email: <a href="mailto:jane.smith@example.com" class="underline">jane.smith@example.com</a></p>
+            </div>
+
+            <div class="rounded-lg border p-4 text-center">
+              <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 flex items-center justify-center font-semibold">MK</div>
+              <h4 class="mt-3 font-medium">Mark K.</h4>
+              <p class="text-sm text-slate-600">Vice President</p>
+              <p class="mt-2 text-xs text-slate-500">Email: <a href="mailto:mark.k@example.com" class="underline">mark.k@example.com</a></p>
+            </div>
+
+            <div class="rounded-lg border p-4 text-center">
+              <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 flex items-center justify-center font-semibold">AL</div>
+              <h4 class="mt-3 font-medium">Alex L.</h4>
+              <p class="text-sm text-slate-600">Treasurer</p>
+              <p class="mt-2 text-xs text-slate-500">Email: <a href="mailto:alex.l@example.com" class="underline">alex.l@example.com</a></p>
+            </div>
+
+            <div class="rounded-lg border p-4 text-center">
+              <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 flex items-center justify-center font-semibold">RT</div>
+              <h4 class="mt-3 font-medium">Rita T.</h4>
+              <p class="text-sm text-slate-600">Secretary</p>
+              <p class="mt-2 text-xs text-slate-500">Email: <a href="mailto:rita.t@example.com" class="underline">rita.t@example.com</a></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DONATE -->
+    <section id="donate" class="py-16">
+      <div class="container px-4 max-w-xl">
+        <h2 class="text-2xl font-bold text-tvblue">Donate</h2>
+        <p class="mt-3 text-slate-600">Your donations fund scholarships, event expenses, and student travel. Thank you for supporting Tri‑Valley FFA members.</p>
+
+        <div class="mt-6 bg-white border rounded-lg p-6 shadow">
+          <form id="donateForm" onsubmit="handleDonate(event)">
+            <label class="block text-sm font-medium">Amount (USD)</label>
+            <input required type="number" step="1" min="5" name="amount" placeholder="25" class="mt-2 w-full rounded-md border px-3 py-2" />
+
+            <label class="block text-sm font-medium mt-4">Your Name</label>
+            <input type="text" name="name" class="mt-2 w-full rounded-md border px-3 py-2" />
+
+            <label class="block text-sm font-medium mt-4">Email</label>
+            <input type="email" name="email" class="mt-2 w-full rounded-md border px-3 py-2" />
+
+            <p class="text-xs text-slate-500 mt-3">This form is a placeholder. Replace handleDonate() with your payment processor integration (Stripe, PayPal, Square, etc.).</p>
+
+            <div class="mt-4 flex gap-3">
+              <button type="submit" class="px-4 py-2 rounded-md bg-tvblue text-white">Donate</button>
+              <button type="button" onclick="window.location='#contact'" class="px-4 py-2 rounded-md border">Contact Us</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-16 bg-slate-50">
+      <div class="container px-4 max-w-2xl">
+        <h2 class="text-2xl font-bold text-tvblue">Contact</h2>
+        <p class="mt-2 text-slate-600">Questions about joining, donating, or volunteering? Send us a message.</p>
+
+        <form id="contactForm" class="mt-6 bg-white border rounded-lg p-6 shadow" onsubmit="handleContact(event)">
+          <label class="block text-sm font-medium">Name</label>
+          <input required type="text" name="name" class="mt-2 w-full rounded-md border px-3 py-2" />
+
+          <label class="block text-sm font-medium mt-4">Email</label>
+          <input required type="
